@@ -1,0 +1,351 @@
+.gss-services {
+  padding: 34px 0 26px;
+  background: #ffffff;
+  color: #252f4c;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  :where(
+    .wp-block-group,
+    .wp-block-image,
+    .wp-block-heading,
+    p,
+    .wp-block-buttons
+  ) {
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.gss-services__container {
+  width: min(100% - 40px, 968px);
+  margin-inline: auto;
+}
+
+.gss-services__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 528px) minmax(0, 418px);
+  grid-template-areas:
+    "heat build"
+    "drilling build"
+    "project project";
+  gap: 26px 23px;
+}
+
+.gss-service-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 292px;
+  border-radius: 21px;
+  background: #f3f4f7;
+}
+
+.gss-service-card::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: auto 0 0;
+  height: 66%;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(242, 244, 247, 0.8) 43%,
+    rgba(235, 238, 242, 0.96) 100%
+  );
+}
+
+.gss-service-card__image {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+}
+
+.gss-service-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gss-service-card__content {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  gap: 24px;
+  padding: 0;
+}
+
+.gss-service-card__title {
+  width: fit-content;
+  color: #252f4c;
+  background: linear-gradient(90deg, #252f4c 0%, #756b8d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+  -webkit-text-fill-color: transparent;
+}
+
+.gss-service-card__text {
+  color: #252f4c;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+}
+
+.gss-service-card--heat {
+  grid-area: heat;
+  min-height: 292px;
+}
+
+.gss-service-card--heat .gss-service-card__content {
+  max-width: 430px;
+  padding: 119px 32px 35px 34px;
+}
+
+.gss-service-card--drilling {
+  grid-area: drilling;
+  min-height: 292px;
+}
+
+.gss-service-card--drilling .gss-service-card__content {
+  max-width: 430px;
+  padding: 150px 32px 35px 34px;
+}
+
+.gss-service-card--build {
+  grid-area: build;
+  min-height: 610px;
+}
+
+.gss-service-card--build::after {
+  height: 50%;
+}
+
+.gss-service-card--build .gss-service-card__content {
+  max-width: 330px;
+  padding: 457px 34px 35px;
+}
+
+.gss-service-card--project {
+  grid-area: project;
+  min-height: 292px;
+}
+
+.gss-service-card--project::after {
+  height: 74%;
+}
+
+.gss-service-card--project .gss-service-card__content {
+  max-width: 660px;
+  padding: 164px 34px 35px;
+}
+
+.gss-service-card__actions {
+  position: absolute;
+  z-index: 4;
+  right: 48px;
+  bottom: 49px;
+}
+
+.gss-service-card__button .wp-block-button__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 209px;
+  min-height: 67px;
+  padding: 20px 30px;
+  border: 0;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #ff8a22 0%, #fe6a08 49%, #ff9536 100%);
+  box-shadow: 0 12px 28px rgba(254, 106, 8, 0.28);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.gss-service-card__button .wp-block-button__link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(254, 106, 8, 0.36);
+}
+
+@media (max-width: 1024px) {
+  .gss-services {
+    padding: 42px 0 28px;
+  }
+
+  .gss-services__container {
+    width: min(100% - 40px, 760px);
+  }
+
+  .gss-services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "heat build"
+      "drilling build"
+      "project project";
+    gap: 22px;
+  }
+
+  .gss-service-card {
+    border-radius: 20px;
+  }
+
+  .gss-service-card--heat,
+  .gss-service-card--drilling {
+    min-height: 270px;
+  }
+
+  .gss-service-card--build {
+    min-height: 562px;
+  }
+
+  .gss-service-card--project {
+    min-height: 280px;
+  }
+
+  .gss-service-card__title {
+    font-size: 29px;
+  }
+
+  .gss-service-card__text {
+    font-size: 16px;
+  }
+
+  .gss-service-card--heat .gss-service-card__content {
+    padding: 112px 28px 32px;
+  }
+
+  .gss-service-card--drilling .gss-service-card__content {
+    padding: 138px 28px 32px;
+  }
+
+  .gss-service-card--build .gss-service-card__content {
+    padding: 404px 28px 32px;
+  }
+
+  .gss-service-card--project .gss-service-card__content {
+    max-width: 520px;
+    padding: 146px 28px 32px;
+  }
+
+  .gss-service-card__actions {
+    right: 32px;
+    bottom: 40px;
+  }
+
+  .gss-service-card__button .wp-block-button__link {
+    min-width: 190px;
+    min-height: 60px;
+  }
+}
+
+@media (max-width: 760px) {
+  .gss-services {
+    padding: 34px 0 22px;
+  }
+
+  .gss-services__container {
+    width: min(100% - 28px, 430px);
+  }
+
+  .gss-services__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heat"
+      "build"
+      "drilling"
+      "project";
+    gap: 18px;
+  }
+
+  .gss-service-card,
+  .gss-service-card--heat,
+  .gss-service-card--build,
+  .gss-service-card--drilling,
+  .gss-service-card--project {
+    min-height: 310px;
+    border-radius: 18px;
+  }
+
+  .gss-service-card::after {
+    height: 74%;
+  }
+
+  .gss-service-card__title {
+    font-size: 29px;
+    line-height: 1.05;
+  }
+
+  .gss-service-card__text {
+    font-size: 16px;
+    line-height: 1.18;
+  }
+
+  .gss-service-card--heat .gss-service-card__content,
+  .gss-service-card--build .gss-service-card__content,
+  .gss-service-card--drilling .gss-service-card__content,
+  .gss-service-card--project .gss-service-card__content {
+    max-width: none;
+    padding: 165px 24px 28px;
+  }
+
+  .gss-service-card__actions {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    z-index: 4;
+    padding: 0 24px 28px;
+    margin-top: -8px;
+  }
+
+  .gss-service-card__button,
+  .gss-service-card__button .wp-block-button__link {
+    width: 100%;
+  }
+
+  .gss-service-card__button .wp-block-button__link {
+    min-width: 0;
+    min-height: 58px;
+  }
+}
+
+@media (max-width: 380px) {
+  .gss-service-card__title {
+    font-size: 26px;
+  }
+
+  .gss-service-card__text {
+    font-size: 15px;
+  }
+
+  .gss-service-card--heat .gss-service-card__content,
+  .gss-service-card--build .gss-service-card__content,
+  .gss-service-card--drilling .gss-service-card__content,
+  .gss-service-card--project .gss-service-card__content {
+    padding-inline: 20px;
+  }
+
+  .gss-service-card__actions {
+    padding-inline: 20px;
+  }
+}

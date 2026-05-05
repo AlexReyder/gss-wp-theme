@@ -17,10 +17,10 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      "@js": path.resolve(themeRoot, "assets/src/js"),
-      "@scss": path.resolve(themeRoot, "assets/src/scss"),
-      "@images": path.resolve(themeRoot, "assets/src/images"),
-      "@fonts": path.resolve(themeRoot, "assets/src/fonts"),
+      "@js": path.resolve(themeRoot, "assets/js"),
+      "@scss": path.resolve(themeRoot, "assets/scss"),
+      "@images": path.resolve(themeRoot, "assets/images"),
+      "@fonts": path.resolve(themeRoot, "assets/fonts"),
     },
   },
 
@@ -31,8 +31,8 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
       input: {
-        app: path.resolve(themeRoot, "assets/src/js/app.js"),
-        editor: path.resolve(themeRoot, "assets/src/scss/editor.scss"),
+        app: path.resolve(themeRoot, "assets/js/app.js"),
+        editor: path.resolve(themeRoot, "assets/scss/editor.scss"),
       },
       output: {
         entryFileNames: "js/[name]-[hash].js",

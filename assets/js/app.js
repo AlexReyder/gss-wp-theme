@@ -5,4 +5,5 @@ import { initSmoothScroll } from "./modules/smooth-scroll";
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initSmoothScroll();
+  console.log("hi");
 });

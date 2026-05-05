@@ -16,13 +16,11 @@
 @use "blocks/hero";
 @use "blocks/about";
 
-// .editor-styles-wrapper {
-//   font-family: var(--font-primary);
-//   background: var(--color-page-bg);
-//   color: var(--color-text);
-// }
+@use "blocks/services";
+
 .editor-styles-wrapper {
-  .gss-about {
+  .gss-about,
+  .gss-services {
     max-width: none !important;
     width: 100%;
   }
@@ -31,8 +29,21 @@
     max-width: 970px !important;
   }
 
-  .gss-about :where(.wp-block-group, .wp-block-image, .wp-block-heading, p) {
-    margin-block-start: 0;
-    margin-block-end: 0;
+  .gss-services__container {
+    max-width: 968px !important;
+  }
+
+  .gss-about,
+  .gss-services {
+    :where(
+      .wp-block-group,
+      .wp-block-image,
+      .wp-block-heading,
+      p,
+      .wp-block-buttons
+    ) {
+      margin-block-start: 0;
+      margin-block-end: 0;
+    }
   }
 }

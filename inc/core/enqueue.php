@@ -4,20 +4,40 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+add_filter('script_loader_tag', function (string $tag, string $handle, string $src): string {
+    $module_handles = [
+        'gss-vite-client',
+        'gss-vite-client-editor',
+        'gss-app',
+    ];
+
+    if (!in_array($handle, $module_handles, true)) {
+        return $tag;
+    }
+
+    return sprintf(
+        '<script type="module" src="%s" id="%s-js"></script>',
+        esc_url($src),
+        esc_attr($handle)
+    );
+}, 10, 3);
+
 add_action('wp_enqueue_scripts', function (): void {
-    if (garant_is_vite_dev()) {
+    if (gss_is_vite_dev_server_running()) {
+        $dev_server = gss_vite_dev_server_url();
+
         wp_enqueue_script(
-            'garant-vite-client',
-            'http://127.0.0.1:5173/@vite/client',
+            'gss-vite-client',
+            $dev_server . '/@vite/client',
             [],
             null,
             true
         );
 
         wp_enqueue_script(
-            'garant-app',
-            'http://127.0.0.1:5173/assets/src/js/app.js',
-            [],
+            'gss-app',
+            $dev_server . '/assets/js/app.js',
+            ['gss-vite-client'],
             null,
             true
         );
@@ -25,7 +45,7 @@ add_action('wp_enqueue_scripts', function (): void {
         return;
     }
 
-    $entry = garant_vite_asset('assets/src/js/app.js');
+    $entry = gss_vite_asset('assets/js/app.js');
 
     if (!$entry || empty($entry['file'])) {
         return;
@@ -34,7 +54,7 @@ add_action('wp_enqueue_scripts', function (): void {
     if (!empty($entry['css']) && is_array($entry['css'])) {
         foreach ($entry['css'] as $index => $css_file) {
             wp_enqueue_style(
-                'garant-app-' . $index,
+                'gss-app-' . $index,
                 GARANT_THEME_URI . '/assets/dist/' . $css_file,
                 [],
                 GARANT_THEME_VERSION
@@ -43,7 +63,7 @@ add_action('wp_enqueue_scripts', function (): void {
     }
 
     wp_enqueue_script(
-        'garant-app',
+        'gss-app',
         GARANT_THEME_URI . '/assets/dist/' . $entry['file'],
         [],
         GARANT_THEME_VERSION,
@@ -52,18 +72,20 @@ add_action('wp_enqueue_scripts', function (): void {
 });
 
 add_action('enqueue_block_editor_assets', function (): void {
-    if (garant_is_vite_dev()) {
+    if (gss_is_vite_dev_server_running()) {
+        $dev_server = gss_vite_dev_server_url();
+
         wp_enqueue_script(
-            'garant-vite-client-editor',
-            'http://127.0.0.1:5173/@vite/client',
+            'gss-vite-client-editor',
+            $dev_server . '/@vite/client',
             [],
             null,
             true
         );
 
         wp_enqueue_style(
-            'garant-editor-dev',
-            'http://127.0.0.1:5173/assets/src/scss/editor.scss',
+            'gss-editor-dev',
+            $dev_server . '/assets/scss/editor.scss',
             [],
             null
         );
@@ -71,14 +93,14 @@ add_action('enqueue_block_editor_assets', function (): void {
         return;
     }
 
-    $entry = garant_vite_asset('assets/src/scss/editor.scss');
+    $entry = gss_vite_asset('assets/scss/editor.scss');
 
     if (!$entry || empty($entry['file'])) {
         return;
     }
 
     wp_enqueue_style(
-        'garant-editor',
+        'gss-editor',
         GARANT_THEME_URI . '/assets/dist/' . $entry['file'],
         [],
         GARANT_THEME_VERSION

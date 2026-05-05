@@ -1,5 +1,7 @@
 body {
-  font-family: var(--font-primary);
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   background: var(--color-page-bg);
   color: var(--color-text);
   line-height: 1.5;
