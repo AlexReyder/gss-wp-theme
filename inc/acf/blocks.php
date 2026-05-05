@@ -104,3 +104,19 @@ add_filter('block_categories_all', function (array $categories): array {
         $categories
     );
 });
+
+acf_register_block_type([
+    'name' => 'projects',
+    'title' => __('Projects', 'gss'),
+    'description' => __('Projects gallery block.', 'gss'),
+    'render_template' => GARANT_THEME_DIR . '/template-parts/blocks/projects.php',
+    'category' => 'garantstroyset',
+    'icon' => 'format-gallery',
+    'keywords' => ['projects', 'gallery', 'проекты', 'галерея'],
+    'mode' => 'preview',
+    'supports' => [
+        'align' => false,
+        'mode' => true,
+        'jsx' => true,
+    ],
+]);

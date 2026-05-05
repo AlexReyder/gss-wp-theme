@@ -15,8 +15,8 @@
 
 @use "blocks/hero";
 @use "blocks/about";
-
 @use "blocks/services";
+@use "blocks/projects";
 
 .editor-styles-wrapper {
   .gss-about,
@@ -45,5 +45,19 @@
       margin-block-start: 0;
       margin-block-end: 0;
     }
+  }
+
+  .gss-projects {
+    max-width: none !important;
+    width: 100%;
+  }
+
+  .gss-projects__container {
+    max-width: 968px !important;
+  }
+
+  .gss-projects :where(.wp-block-group, .wp-block-image, .wp-block-heading, p) {
+    margin-block-start: 0;
+    margin-block-end: 0;
   }
 }
