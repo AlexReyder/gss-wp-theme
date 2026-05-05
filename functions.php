@@ -16,6 +16,7 @@ require_once GARANT_THEME_DIR . '/inc/core/setup.php';
 require_once GARANT_THEME_DIR . '/inc/core/enqueue.php';
 require_once GARANT_THEME_DIR . '/inc/core/menus.php';
 require_once GARANT_THEME_DIR . '/inc/core/cleanup.php';
+require_once GARANT_THEME_DIR . '/inc/core/patterns.php';
 
 require_once GARANT_THEME_DIR . '/inc/acf/blocks.php';
 require_once GARANT_THEME_DIR . '/inc/acf/fields.php';

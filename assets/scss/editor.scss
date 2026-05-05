@@ -21,3 +21,18 @@
 //   background: var(--color-page-bg);
 //   color: var(--color-text);
 // }
+.editor-styles-wrapper {
+  .gss-about {
+    max-width: none !important;
+    width: 100%;
+  }
+
+  .gss-about__container {
+    max-width: 970px !important;
+  }
+
+  .gss-about :where(.wp-block-group, .wp-block-image, .wp-block-heading, p) {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+}
