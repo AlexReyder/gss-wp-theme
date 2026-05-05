@@ -1,0 +1,15 @@
+{
+  "name": "garantstroyset-theme",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.0.7",
+    "sass": "^1.99.0"
+  },
+  "dependencies": {}
+}
