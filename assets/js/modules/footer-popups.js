@@ -22,7 +22,7 @@ export function initFooterPopups() {
     popup.hidden = false;
     document.documentElement.classList.add("gss-popup-is-open");
 
-    const dialog = popup.querySelector(".gss-popup__dialog");
+    const dialog = popup.querySelector('[role="dialog"]');
 
     if (dialog) {
       dialog.focus();

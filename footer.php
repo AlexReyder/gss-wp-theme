@@ -3,6 +3,35 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+
+if (!function_exists('gss_get_legal_page_data')) {
+    function gss_get_legal_page_data(string $slug, string $fallback_title): array
+    {
+        $page = get_page_by_path($slug, OBJECT, 'page');
+
+        if (!$page instanceof WP_Post) {
+            return [
+                'title' => $fallback_title,
+                'content' => '<p>Контент документа пока не добавлен.</p>',
+            ];
+        }
+
+        return [
+            'title' => get_the_title($page),
+            'content' => apply_filters('the_content', $page->post_content),
+        ];
+    }
+}
+
+$cookie_policy = gss_get_legal_page_data(
+    'politika-cookie',
+    'Политика использования файлов cookie'
+);
+
+$privacy_policy = gss_get_legal_page_data(
+    'politika-personalnyh-dannyh',
+    'Политика обработки персональных данных'
+);
 ?>
 
 <footer class="gss-footer">
@@ -38,67 +67,54 @@ if (!defined('ABSPATH')) {
     </div>
 </footer>
 
-<div class="gss-popup" id="gss-popup-cookies" data-gss-popup="cookies" hidden>
-    <div class="gss-popup__overlay" data-gss-popup-close></div>
+<div class="gss-policy-popup" id="gss-popup-cookies" data-gss-popup="cookies" hidden>
+    <div class="gss-policy-popup__overlay" data-gss-popup-close></div>
 
     <div
-        class="gss-popup__dialog"
+        class="gss-policy-popup__dialog"
         role="dialog"
         aria-modal="true"
         aria-labelledby="gss-popup-cookies-title"
         tabindex="-1"
     >
-        <button class="gss-popup__close" type="button" data-gss-popup-close aria-label="Закрыть popup">
-            ×
+        <button
+            class="gss-policy-popup__close"
+            type="button"
+            data-gss-popup-close
+            aria-label="Закрыть popup"
+        >
+            <span></span>
+            <span></span>
         </button>
 
-        <h2 class="gss-popup__title" id="gss-popup-cookies-title">
-            Политика использования файлов cookie
-        </h2>
-
-        <div class="gss-popup__content">
-            <p>
-                На сайте используются файлы cookie для корректной работы сайта,
-                анализа посещаемости и улучшения пользовательского опыта.
-            </p>
-
-            <p>
-                Продолжая использовать сайт, пользователь соглашается с использованием
-                файлов cookie.
-            </p>
+        <div class="gss-policy-popup__content" id="gss-popup-cookies-title">
+            <?php echo wp_kses_post($cookie_policy['content']); ?>
         </div>
     </div>
 </div>
 
-<div class="gss-popup" id="gss-popup-privacy" data-gss-popup="privacy" hidden>
-    <div class="gss-popup__overlay" data-gss-popup-close></div>
+<div class="gss-policy-popup" id="gss-popup-privacy" data-gss-popup="privacy" hidden>
+    <div class="gss-policy-popup__overlay" data-gss-popup-close></div>
 
     <div
-        class="gss-popup__dialog"
+        class="gss-policy-popup__dialog"
         role="dialog"
         aria-modal="true"
         aria-labelledby="gss-popup-privacy-title"
         tabindex="-1"
     >
-        <button class="gss-popup__close" type="button" data-gss-popup-close aria-label="Закрыть popup">
-            ×
+        <button
+            class="gss-policy-popup__close"
+            type="button"
+            data-gss-popup-close
+            aria-label="Закрыть popup"
+        >
+            <span></span>
+            <span></span>
         </button>
 
-        <h2 class="gss-popup__title" id="gss-popup-privacy-title">
-            Политика обработки персональных данных
-        </h2>
-
-        <div class="gss-popup__content">
-            <p>
-                Оставляя данные на сайте, пользователь соглашается на обработку
-                персональных данных в целях обратной связи, обработки входящих заявок
-                и предоставления информации об услугах компании.
-            </p>
-
-            <p>
-                Персональные данные не передаются третьим лицам, за исключением случаев,
-                предусмотренных законодательством РФ.
-            </p>
+        <div class="gss-policy-popup__content" id="gss-popup-privacy-title">
+            <?php echo wp_kses_post($privacy_policy['content']); ?>
         </div>
     </div>
 </div>
