@@ -1,11 +1,11 @@
 .gss-contacts {
   --gss-contacts-bg: #191919;
-  --gss-contacts-line: rgba(255, 255, 255, 0.08);
+  --gss-contacts-line: #282828;
   --gss-contacts-muted: rgba(255, 255, 255, 0.22);
-  --gss-contacts-text: rgba(255, 255, 255, 0.42);
-  --gss-contacts-strong: rgba(255, 255, 255, 0.92);
-  --gss-contacts-accent: #ff8a22;
-  --gss-contacts-blue: #166bff;
+  --gss-contacts-text: #535353;
+  --gss-contacts-strong: #fff;
+  --gss-contacts-accent: #ff9536;
+  --gss-contacts-blue: #085efe;
 
   padding: 70px 0 68px;
   background: var(--gss-contacts-bg);

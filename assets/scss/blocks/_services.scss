@@ -49,6 +49,10 @@
   min-height: 292px;
   border-radius: 21px;
   background: #f3f4f7;
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .gss-service-card::after {

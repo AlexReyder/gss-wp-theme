@@ -1,11 +1,10 @@
 .gss-footer {
-  --gss-footer-bg: #191919;
-  --gss-footer-text: rgba(255, 255, 255, 0.28);
+  --gss-footer-bg: #151515;
+  --gss-footer-text: #535353;
   --gss-footer-text-hover: rgba(255, 255, 255, 0.58);
 
   padding: 18px 0 20px;
   background: var(--gss-footer-bg);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
 
   &__container {
     display: grid;
