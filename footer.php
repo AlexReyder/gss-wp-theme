@@ -118,7 +118,160 @@ $privacy_policy = gss_get_legal_page_data(
         </div>
     </div>
 </div>
+<div class="gss-lead-popup" id="gss-popup-lead" data-gss-popup="lead" hidden>
+    <div class="gss-lead-popup__overlay" data-gss-popup-close></div>
 
+    <div
+        class="gss-lead-popup__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="gss-lead-popup-title"
+        tabindex="-1"
+    >
+        <button
+            class="gss-lead-popup__close"
+            type="button"
+            data-gss-popup-close
+            aria-label="Закрыть popup"
+        >
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="gss-lead-popup__media" aria-hidden="true">
+            <div class="gss-lead-popup__media-pattern"></div>
+            <img
+                class="gss-lead-popup__person"
+                src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/cta/person.png'); ?>"
+                alt=""
+            >
+        </div>
+
+        <div class="gss-lead-popup__content">
+            <div class="gss-lead-popup__intro">
+                <h2 class="gss-lead-popup__title" id="gss-lead-popup-title">
+                    Получите расчет стоимости работ
+                </h2>
+
+                <p class="gss-lead-popup__subtitle">
+                    Оставьте заявку — мы:
+                </p>
+
+                <ul class="gss-lead-popup__benefits">
+                    <li class="gss-lead-popup__benefit">
+                        <span class="gss-lead-popup__benefit-icon" aria-hidden="true">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/cta/icon-1.png'); ?>" alt="">
+                        </span>
+                        <span class="gss-lead-popup__benefit-text">
+                            Подберем техническое решение под ваш объект
+                        </span>
+                    </li>
+
+                    <li class="gss-lead-popup__benefit">
+                        <span class="gss-lead-popup__benefit-icon" aria-hidden="true">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/cta/icon-2.png'); ?>" alt="">
+                        </span>
+                        <span class="gss-lead-popup__benefit-text">
+                            Рассчитаем стоимость и сроки выполнения
+                        </span>
+                    </li>
+
+                    <li class="gss-lead-popup__benefit">
+                        <span class="gss-lead-popup__benefit-icon" aria-hidden="true">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/cta/icon-3.png'); ?>" alt="">
+                        </span>
+                        <span class="gss-lead-popup__benefit-text">
+                            Проконсультируем по реализации проекта
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="gss-lead-popup__form-block">
+                <h3 class="gss-lead-popup__form-title">
+                    Заполните форму:
+                </h3>
+
+                <form
+                    class="gss-lead-popup__form"
+                    id="gss-lead-popup-form"
+                    action="<?php echo esc_url(admin_url('admin-post.php')); ?>"
+                    method="post"
+                    data-gss-lead-form
+                >
+                    <input type="hidden" name="action" value="gss_submit_lead">
+                    <input type="hidden" name="form_source" value="Popup">
+                    <input type="hidden" name="page_url" value="">
+                    <input type="hidden" name="redirect_to" value="">
+
+                    <label class="gss-lead-popup__honeypot" aria-hidden="true">
+                        <span>Компания</span>
+                        <input type="text" name="company" tabindex="-1" autocomplete="off">
+                    </label>
+
+                    <div class="gss-lead-popup__notice" data-gss-lead-message hidden></div>
+
+                    <div class="gss-lead-popup__fields">
+                        <label class="gss-lead-popup__field">
+                            <span class="screen-reader-text">Ваше имя</span>
+                            <span class="gss-lead-popup__field-icon" aria-hidden="true">
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/cta/name.svg'); ?>" alt="">
+                            </span>
+                            <input
+                                class="gss-lead-popup__input"
+                                type="text"
+                                name="name"
+                                placeholder="Ваше имя"
+                                autocomplete="name"
+                                required
+                            >
+                        </label>
+
+                        <label class="gss-lead-popup__field">
+                            <span class="screen-reader-text">Телефон</span>
+                            <span class="gss-lead-popup__field-icon" aria-hidden="true">
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/cta/phone.svg'); ?>" alt="">
+                            </span>
+                            <input
+                                class="gss-lead-popup__input"
+                                type="tel"
+                                name="phone"
+                                placeholder="+7(__)___-__-__"
+                                inputmode="tel"
+                                autocomplete="tel"
+                                required
+                            >
+                        </label>
+                    </div>
+
+                    <button class="gss-lead-popup__submit" type="submit">
+                        Получить расчет
+                    </button>
+
+                    <label class="gss-lead-popup__agreement">
+                        <input
+                            class="gss-lead-popup__checkbox"
+                            type="checkbox"
+                            name="agreement"
+                            value="1"
+                            required
+                        >
+                        <span class="gss-lead-popup__agreement-text">
+                            <span>Я согласен на обработку</span>
+                            <a
+                                class="gss-lead-popup__agreement-link"
+                                href="#"
+                                data-gss-popup-open="privacy"
+                            >
+                                персональных данных
+                            </a>
+                        </span>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <?php wp_footer(); ?>
 </body>
 </html>

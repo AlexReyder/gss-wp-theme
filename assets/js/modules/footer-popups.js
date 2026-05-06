@@ -1,5 +1,11 @@
 export function initFooterPopups() {
-  const openButtons = document.querySelectorAll("[data-gss-popup-open]");
+  const triggers = [
+    ...document.querySelectorAll("[data-gss-popup-open]"),
+    ...document.querySelectorAll(".gss-hero__button"),
+    ...document.querySelectorAll(".gss-service-card__button a"),
+  ];
+
+  const openButtons = [...new Set(triggers)];
   const popups = document.querySelectorAll("[data-gss-popup]");
 
   if (!openButtons.length || !popups.length) {
@@ -9,11 +15,34 @@ export function initFooterPopups() {
   let activePopup = null;
   let lastActiveElement = null;
 
+  const getPopupName = (trigger) => {
+    if (trigger.dataset.gssPopupOpen) {
+      return trigger.dataset.gssPopupOpen;
+    }
+
+    if (
+      trigger.matches(".gss-hero__button") ||
+      trigger.matches(".gss-service-card__button a")
+    ) {
+      return "lead";
+    }
+
+    return "";
+  };
+
   const openPopup = (name) => {
+    if (!name) {
+      return;
+    }
+
     const popup = document.querySelector(`[data-gss-popup="${name}"]`);
 
     if (!popup) {
       return;
+    }
+
+    if (activePopup && activePopup !== popup) {
+      activePopup.hidden = true;
     }
 
     lastActiveElement = document.activeElement;
@@ -46,8 +75,15 @@ export function initFooterPopups() {
   };
 
   openButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      openPopup(button.dataset.gssPopupOpen);
+    button.addEventListener("click", (event) => {
+      const popupName = getPopupName(button);
+
+      if (!popupName) {
+        return;
+      }
+
+      event.preventDefault();
+      openPopup(popupName);
     });
   });
 
