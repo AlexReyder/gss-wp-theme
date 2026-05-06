@@ -4,6 +4,7 @@ import { initSmoothScroll } from "./modules/smooth-scroll";
 import { initProjectsGallery } from "./modules/projects-gallery";
 import { initLeadForms } from "./modules/lead-form";
 import { initFooterPopups } from "./modules/footer-popups";
+import { initCookieBanner } from "./modules/cookie-banner";
 
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
@@ -11,4 +12,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initProjectsGallery();
   initLeadForms();
   initFooterPopups();
+  initCookieBanner();
 });

@@ -272,6 +272,26 @@ $privacy_policy = gss_get_legal_page_data(
         </div>
     </div>
 </div>
+<div class="gss-cookie-banner" data-gss-cookie-banner hidden>
+    <div class="gss-cookie-banner__inner">
+        <span class="gss-cookie-banner__icon" aria-hidden="true">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/common/cookie.png'); ?>" alt="">
+        </span>
+
+        <p class="gss-cookie-banner__text">
+            Мы используем файлы cookie для корректной работы сайта и анализа трафика.
+            Продолжая пользоваться сайтом, вы соглашаетесь с их использованием и обработкой персональных данных.
+        </p>
+
+        <button
+            class="gss-cookie-banner__button"
+            type="button"
+            data-gss-cookie-accept
+        >
+            Принять
+        </button>
+    </div>
+</div>
 <?php wp_footer(); ?>
 </body>
 </html>

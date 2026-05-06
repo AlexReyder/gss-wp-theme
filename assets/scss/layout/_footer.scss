@@ -46,17 +46,39 @@
 
 .gss-popup-is-open {
   overflow: hidden;
+  scrollbar-gutter: stable;
 }
 
+.gss-popup-is-open body {
+  padding-right: var(--gss-scrollbar-width, 0px);
+}
 .gss-policy-popup {
   position: fixed;
   inset: 0;
   z-index: 1000;
   overflow-y: auto;
   background: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.26s ease,
+    visibility 0.26s ease;
 
   &[hidden] {
     display: none;
+  }
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &.is-closing {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   &__overlay {
@@ -74,7 +96,12 @@
     padding: 64px 0 72px;
     background: #ffffff;
     color: #7a7a7a;
+    opacity: 0;
     outline: none;
+    transform: translateY(18px);
+    transition:
+      opacity 0.26s ease,
+      transform 0.26s ease;
   }
 
   &__close {
@@ -172,6 +199,20 @@
   }
 }
 
+.gss-policy-popup.is-open {
+  .gss-policy-popup__dialog {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gss-policy-popup.is-closing {
+  .gss-policy-popup__dialog {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
 @media (max-width: 900px) {
   .gss-footer {
     &__container {
@@ -228,5 +269,16 @@
         padding-left: 22px;
       }
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gss-policy-popup,
+  .gss-policy-popup__dialog {
+    transition: none;
+  }
+
+  .gss-policy-popup__dialog {
+    transform: none;
   }
 }

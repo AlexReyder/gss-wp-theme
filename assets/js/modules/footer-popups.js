@@ -1,3 +1,5 @@
+const POPUP_ANIMATION_DURATION = 260;
+
 export function initFooterPopups() {
   const triggers = [
     ...document.querySelectorAll("[data-gss-popup-open]"),
@@ -14,6 +16,7 @@ export function initFooterPopups() {
 
   let activePopup = null;
   let lastActiveElement = null;
+  let closeTimer = null;
 
   const getPopupName = (trigger) => {
     if (trigger.dataset.gssPopupOpen) {
@@ -30,6 +33,31 @@ export function initFooterPopups() {
     return "";
   };
 
+  const finishClosePopup = (popup, shouldRestoreFocus = true) => {
+    popup.hidden = true;
+    popup.classList.remove("is-open", "is-closing");
+
+    if (activePopup === popup) {
+      activePopup = null;
+    }
+
+    if (!activePopup) {
+      document.documentElement.classList.remove("gss-popup-is-open");
+    }
+
+    if (
+      shouldRestoreFocus &&
+      lastActiveElement &&
+      typeof lastActiveElement.focus === "function"
+    ) {
+      lastActiveElement.focus();
+    }
+
+    if (shouldRestoreFocus) {
+      lastActiveElement = null;
+    }
+  };
+
   const openPopup = (name) => {
     if (!name) {
       return;
@@ -41,21 +69,32 @@ export function initFooterPopups() {
       return;
     }
 
+    if (closeTimer) {
+      window.clearTimeout(closeTimer);
+      closeTimer = null;
+    }
+
     if (activePopup && activePopup !== popup) {
-      activePopup.hidden = true;
+      finishClosePopup(activePopup, false);
     }
 
     lastActiveElement = document.activeElement;
     activePopup = popup;
 
     popup.hidden = false;
+    popup.classList.remove("is-closing");
+
     document.documentElement.classList.add("gss-popup-is-open");
 
-    const dialog = popup.querySelector('[role="dialog"]');
+    window.requestAnimationFrame(() => {
+      popup.classList.add("is-open");
 
-    if (dialog) {
-      dialog.focus();
-    }
+      const dialog = popup.querySelector('[role="dialog"]');
+
+      if (dialog) {
+        dialog.focus();
+      }
+    });
   };
 
   const closePopup = () => {
@@ -63,15 +102,17 @@ export function initFooterPopups() {
       return;
     }
 
-    activePopup.hidden = true;
+    const popup = activePopup;
+
+    popup.classList.remove("is-open");
+    popup.classList.add("is-closing");
+
+    closeTimer = window.setTimeout(() => {
+      finishClosePopup(popup, true);
+      closeTimer = null;
+    }, POPUP_ANIMATION_DURATION);
+
     activePopup = null;
-    document.documentElement.classList.remove("gss-popup-is-open");
-
-    if (lastActiveElement && typeof lastActiveElement.focus === "function") {
-      lastActiveElement.focus();
-    }
-
-    lastActiveElement = null;
   };
 
   openButtons.forEach((button) => {
