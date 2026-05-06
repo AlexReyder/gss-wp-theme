@@ -23,7 +23,7 @@ $theme_uri = get_template_directory_uri();
 			<ul class="gss-cta__list">
 				<li class="gss-cta__item">
 					<span class="gss-cta__item-icon" aria-hidden="true">
-						<img src="<?php echo esc_url($theme_uri . '/images/cta/icon-1.png'); ?>" alt="">
+						<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/icon-1.png'); ?>" alt="">
 					</span>
 					<span class="gss-cta__item-text">
 						Подберем техническое решение под ваш объект
@@ -32,7 +32,7 @@ $theme_uri = get_template_directory_uri();
 
 				<li class="gss-cta__item">
 					<span class="gss-cta__item-icon" aria-hidden="true">
-						<img src="<?php echo esc_url($theme_uri . '/images/cta/icon-2.png'); ?>" alt="">
+						<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/icon-2.png'); ?>" alt="">
 					</span>
 					<span class="gss-cta__item-text">
 						Рассчитаем стоимость и сроки выполнения
@@ -41,7 +41,7 @@ $theme_uri = get_template_directory_uri();
 
 				<li class="gss-cta__item">
 					<span class="gss-cta__item-icon" aria-hidden="true">
-						<img src="<?php echo esc_url($theme_uri . '/images/cta/icon-3.png'); ?>" alt="">
+						<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/icon-3.png'); ?>" alt="">
 					</span>
 					<span class="gss-cta__item-text">
 						Проконсультируем по реализации проекта
@@ -51,7 +51,7 @@ $theme_uri = get_template_directory_uri();
 		</div>
 
 		<div class="gss-cta__person" aria-hidden="true">
-			<img src="<?php echo esc_url($theme_uri . '/images/cta/person.png'); ?>" alt="">
+			<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/person.png'); ?>" alt="">
 		</div>
 
 		<div class="gss-cta__form-wrap">
@@ -59,12 +59,29 @@ $theme_uri = get_template_directory_uri();
 				Заполните форму:
 			</h3>
 
-			<form class="gss-cta__form" action="#" method="post">
+			<form
+	class="gss-cta__form"
+	id="gss-cta-form"
+	action="<?php echo esc_url(admin_url('admin-post.php')); ?>"
+	method="post"
+	data-gss-lead-form
+>
+	<input type="hidden" name="action" value="gss_submit_lead">
+	<input type="hidden" name="form_source" value="CTA">
+	<input type="hidden" name="page_url" value="">
+	<input type="hidden" name="redirect_to" value="">
+
+	<label class="gss-cta__honeypot" aria-hidden="true">
+		<span>Компания</span>
+		<input type="text" name="company" tabindex="-1" autocomplete="off">
+	</label>
+
+	<div class="gss-cta__notice" data-gss-lead-message hidden></div>
 				<div class="gss-cta__fields">
 					<label class="gss-cta__field">
 						<span class="screen-reader-text">Ваше имя</span>
 						<span class="gss-cta__field-icon" aria-hidden="true">
-							<img src="<?php echo esc_url($theme_uri . '/images/cta/name.svg'); ?>" alt="">
+							<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/name.svg'); ?>" alt="">
 						</span>
 						<input
 							class="gss-cta__input"
@@ -79,7 +96,7 @@ $theme_uri = get_template_directory_uri();
 					<label class="gss-cta__field">
 						<span class="screen-reader-text">Телефон</span>
 						<span class="gss-cta__field-icon" aria-hidden="true">
-							<img src="<?php echo esc_url($theme_uri . '/images/cta/phone.svg'); ?>" alt="">
+							<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/phone.svg'); ?>" alt="">
 						</span>
 						<input
 							class="gss-cta__input"
