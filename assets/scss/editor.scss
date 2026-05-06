@@ -72,4 +72,35 @@
     margin-block-start: 0;
     margin-block-end: 0;
   }
+  .gss-cta {
+    max-width: none !important;
+    width: 100%;
+  }
+
+  .gss-cta__card {
+    max-width: 968px !important;
+  }
+
+  .gss-cta
+    :where(
+      .wp-block-group,
+      .wp-block-image,
+      .wp-block-heading,
+      p,
+      form,
+      label
+    ) {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+
+  .gss-cta__form {
+    pointer-events: none;
+  }
+
+  .gss-cta__input,
+  .gss-cta__submit,
+  .gss-cta__checkbox {
+    pointer-events: none;
+  }
 }

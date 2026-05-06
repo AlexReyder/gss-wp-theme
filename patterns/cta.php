@@ -3,80 +3,117 @@
  * Title: CTA
  * Slug: gss/cta
  * Categories: gss
- * Description: Блок заявки на расчет стоимости работ.
+ * Keywords: cta, lead, form, calculation
+ * Inserter: true
  */
+
+if (!defined('ABSPATH')) {
+	exit;
+}
 
 $theme_uri = get_template_directory_uri();
 ?>
 
-<section class="gss-cta" aria-labelledby="gss-cta-title">
-	<div class="gss-cta__inner">
-		<div class="gss-cta__content">
-			<h2 class="gss-cta__title" id="gss-cta-title">
-				Получите расчет стоимости работ
-			</h2>
+<!-- wp:group {"tagName":"section","className":"gss-cta"} -->
+<section class="wp-block-group gss-cta" aria-labelledby="gss-cta-title">
 
-			<p class="gss-cta__subtitle">
-				Оставьте заявку — мы:
-			</p>
+	<!-- wp:group {"className":"gss-cta__card"} -->
+	<div class="wp-block-group gss-cta__card">
 
-			<ul class="gss-cta__list">
-				<li class="gss-cta__item">
-					<span class="gss-cta__item-icon" aria-hidden="true">
+		<!-- wp:group {"className":"gss-cta__content"} -->
+		<div class="wp-block-group gss-cta__content">
+
+			<!-- wp:heading {"level":2,"className":"gss-cta__title"} -->
+			<h2 class="wp-block-heading gss-cta__title" id="gss-cta-title">Получите расчет стоимости работ</h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"className":"gss-cta__subtitle"} -->
+			<p class="gss-cta__subtitle">Оставьте заявку — мы:</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:group {"className":"gss-cta__benefits"} -->
+			<div class="wp-block-group gss-cta__benefits">
+
+				<!-- wp:group {"className":"gss-cta__benefit"} -->
+				<div class="wp-block-group gss-cta__benefit">
+					<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-cta__benefit-icon"} -->
+					<figure class="wp-block-image size-full gss-cta__benefit-icon">
 						<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/icon-1.png'); ?>" alt="">
-					</span>
-					<span class="gss-cta__item-text">
-						Подберем техническое решение под ваш объект
-					</span>
-				</li>
+					</figure>
+					<!-- /wp:image -->
 
-				<li class="gss-cta__item">
-					<span class="gss-cta__item-icon" aria-hidden="true">
+					<!-- wp:paragraph {"className":"gss-cta__benefit-text"} -->
+					<p class="gss-cta__benefit-text">Подберем техническое решение под ваш объект</p>
+					<!-- /wp:paragraph -->
+				</div>
+				<!-- /wp:group -->
+
+				<!-- wp:group {"className":"gss-cta__benefit"} -->
+				<div class="wp-block-group gss-cta__benefit">
+					<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-cta__benefit-icon"} -->
+					<figure class="wp-block-image size-full gss-cta__benefit-icon">
 						<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/icon-2.png'); ?>" alt="">
-					</span>
-					<span class="gss-cta__item-text">
-						Рассчитаем стоимость и сроки выполнения
-					</span>
-				</li>
+					</figure>
+					<!-- /wp:image -->
 
-				<li class="gss-cta__item">
-					<span class="gss-cta__item-icon" aria-hidden="true">
+					<!-- wp:paragraph {"className":"gss-cta__benefit-text"} -->
+					<p class="gss-cta__benefit-text">Рассчитаем стоимость и сроки выполнения</p>
+					<!-- /wp:paragraph -->
+				</div>
+				<!-- /wp:group -->
+
+				<!-- wp:group {"className":"gss-cta__benefit"} -->
+				<div class="wp-block-group gss-cta__benefit">
+					<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-cta__benefit-icon"} -->
+					<figure class="wp-block-image size-full gss-cta__benefit-icon">
 						<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/icon-3.png'); ?>" alt="">
-					</span>
-					<span class="gss-cta__item-text">
-						Проконсультируем по реализации проекта
-					</span>
-				</li>
-			</ul>
-		</div>
+					</figure>
+					<!-- /wp:image -->
 
-		<div class="gss-cta__person" aria-hidden="true">
+					<!-- wp:paragraph {"className":"gss-cta__benefit-text"} -->
+					<p class="gss-cta__benefit-text">Проконсультируем по реализации проекта</p>
+					<!-- /wp:paragraph -->
+				</div>
+				<!-- /wp:group -->
+
+			</div>
+			<!-- /wp:group -->
+
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-cta__person"} -->
+		<figure class="wp-block-image size-full gss-cta__person">
 			<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/person.png'); ?>" alt="">
-		</div>
+		</figure>
+		<!-- /wp:image -->
 
-		<div class="gss-cta__form-wrap">
-			<h3 class="gss-cta__form-title">
-				Заполните форму:
-			</h3>
+		<!-- wp:group {"className":"gss-cta__form-column"} -->
+		<div class="wp-block-group gss-cta__form-column">
+
+			<!-- wp:heading {"level":3,"className":"gss-cta__form-title"} -->
+			<h3 class="wp-block-heading gss-cta__form-title">Заполните форму:</h3>
+			<!-- /wp:heading -->
 
 			<form
-	class="gss-cta__form"
-	id="gss-cta-form"
-	action="<?php echo esc_url(admin_url('admin-post.php')); ?>"
-	method="post"
-	data-gss-lead-form
->
-	<input type="hidden" name="action" value="gss_submit_lead">
-	<input type="hidden" name="form_source" value="CTA">
-	<input type="hidden" name="page_url" value="">
-	<input type="hidden" name="redirect_to" value="">
+				class="gss-cta__form"
+				id="gss-cta-form"
+				action="<?php echo esc_url(admin_url('admin-post.php')); ?>"
+				method="post"
+				data-gss-lead-form
+			>
+				<input type="hidden" name="action" value="gss_submit_lead">
+				<input type="hidden" name="form_source" value="CTA">
+				<input type="hidden" name="page_url" value="">
+				<input type="hidden" name="redirect_to" value="">
 
-	<label class="gss-cta__honeypot" aria-hidden="true">
-		<span>Компания</span>
-		<input type="text" name="company" tabindex="-1" autocomplete="off">
-	</label>
+				<label class="gss-cta__honeypot" aria-hidden="true">
+					<span>Компания</span>
+					<input type="text" name="company" tabindex="-1" autocomplete="off">
+				</label>
 
-	<div class="gss-cta__notice" data-gss-lead-message hidden></div>
+				<div class="gss-cta__notice" data-gss-lead-message hidden></div>
+
 				<div class="gss-cta__fields">
 					<label class="gss-cta__field">
 						<span class="screen-reader-text">Ваше имя</span>
@@ -110,9 +147,7 @@ $theme_uri = get_template_directory_uri();
 					</label>
 				</div>
 
-				<button class="gss-cta__submit" type="submit">
-					Получить расчет
-				</button>
+				<button class="gss-cta__submit" type="submit">Получить расчет</button>
 
 				<label class="gss-cta__agreement">
 					<input
@@ -123,13 +158,17 @@ $theme_uri = get_template_directory_uri();
 						required
 					>
 					<span class="gss-cta__agreement-text">
-						Я согласен на обработку
-						<a href="#" class="gss-cta__agreement-link">
-							персональных данных
-						</a>
+						<span>Я согласен на обработку</span>
+						<a class="gss-cta__agreement-link" href="#">персональных данных</a>
 					</span>
 				</label>
 			</form>
+
 		</div>
+		<!-- /wp:group -->
+
 	</div>
+	<!-- /wp:group -->
+
 </section>
+<!-- /wp:group -->

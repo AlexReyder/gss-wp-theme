@@ -6,6 +6,8 @@ if (!defined('ABSPATH')) {
 
 add_action('admin_post_nopriv_gss_submit_lead', 'gss_handle_lead_form_submit');
 add_action('admin_post_gss_submit_lead', 'gss_handle_lead_form_submit');
+add_action('wp_ajax_nopriv_gss_submit_lead', 'gss_handle_lead_form_submit');
+add_action('wp_ajax_gss_submit_lead', 'gss_handle_lead_form_submit');
 
 function gss_handle_lead_form_submit(): void
 {
@@ -179,6 +181,28 @@ function gss_send_lead_email(array $lead): void
 
 function gss_lead_redirect(string $status): void
 {
+    if (wp_doing_ajax()) {
+        $message = gss_get_lead_status_message($status);
+
+        if ($status === 'success') {
+            wp_send_json_success([
+                'status' => $status,
+                'message' => $message,
+            ]);
+        }
+
+        $http_status = match ($status) {
+            'invalid' => 422,
+            'throttled' => 429,
+            default => 500,
+        };
+
+        wp_send_json_error([
+            'status' => $status,
+            'message' => $message,
+        ], $http_status);
+    }
+
     $redirect_to = isset($_POST['redirect_to'])
         ? esc_url_raw(wp_unslash($_POST['redirect_to']))
         : '';
@@ -193,6 +217,16 @@ function gss_lead_redirect(string $status): void
 
     wp_safe_redirect($redirect_to . '#gss-cta-form');
     exit;
+}
+
+function gss_get_lead_status_message(string $status): string
+{
+    return match ($status) {
+        'success' => 'Спасибо! Заявка отправлена. Мы свяжемся с вами в ближайшее время.',
+        'invalid' => 'Проверьте имя, телефон и согласие на обработку персональных данных.',
+        'throttled' => 'Заявка уже была отправлена. Попробуйте повторить чуть позже.',
+        default => 'Не удалось отправить заявку. Попробуйте повторить позже.',
+    };
 }
 
 function gss_get_client_ip(): string

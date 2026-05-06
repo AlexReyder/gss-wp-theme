@@ -11,7 +11,7 @@
 }
 
 .gss-projects__container {
-  width: min(100% - 40px, 968px);
+  width: min(100% - 40px, 1188px);
   margin-inline: auto;
 }
 
@@ -22,17 +22,16 @@
 .gss-projects__title {
   margin: 0 0 20px;
   color: #252f4c;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 400;
-  line-height: 1.12;
-  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 
 .gss-projects__text {
   max-width: 780px;
   margin: 0;
   color: #252f4c;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: -0.02em;
