@@ -9,6 +9,7 @@ add_action('after_setup_theme', function (): void {
 
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_image_size('gss_project_grid', 720, 520, true);
     add_theme_support('html5', [
         'search-form',
         'comment-form',
