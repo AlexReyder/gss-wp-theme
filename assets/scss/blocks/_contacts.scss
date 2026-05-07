@@ -1,28 +1,20 @@
 .gss-contacts {
-  --gss-contacts-bg: #191919;
-  --gss-contacts-line: #282828;
-  --gss-contacts-muted: #535353;
-  --gss-contacts-text: #535353;
-  --gss-contacts-strong: #fff;
-  --gss-contacts-accent: #ff9536;
-  --gss-contacts-blue: #085efe;
-
   padding: 70px 0 68px;
-  background: var(--gss-contacts-bg);
-  color: var(--gss-contacts-text);
+  background: var(--bg-color-contact);
+  color: var(--text-color-contact);
 
   &__container {
     display: grid;
     grid-template-columns: minmax(0, 470px) minmax(0, 550px);
     gap: 96px;
-    width: min(100% - 40px, 1188px);
+    width: var(--layout-width-container);
     margin: 0 auto;
   }
 
   &__company-title,
   &__title {
     margin: 0;
-    color: var(--gss-contacts-muted);
+    color: var(--text-color-contact);
     font-size: 32px;
     font-weight: 400;
     line-height: 1.1;
@@ -40,7 +32,7 @@
   &__group-title,
   &__small-title {
     margin: 0;
-    color: var(--gss-contacts-muted);
+    color: var(--text-color-contact);
     font-size: 19px;
     font-weight: 400;
     line-height: 1.2;
@@ -58,13 +50,13 @@
     align-items: center;
     min-height: 58px;
     margin: 0;
-    border-bottom: 1px solid var(--gss-contacts-line);
+    border-bottom: 1px solid var(--color-line-contact);
   }
 
   &__label,
   &__value {
     margin: 0;
-    color: var(--gss-contacts-text);
+    color: var(--text-color-contact);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.25;
@@ -84,7 +76,7 @@
     margin-top: 30px;
     padding: 16px 28px;
     border-radius: 10px;
-    background: var(--gss-contacts-blue);
+    background: var(--secondary-color);
     color: #ffffff;
     font-size: 20px;
     font-weight: 500;
@@ -117,7 +109,7 @@
   &__phone {
     display: inline-flex;
     margin-top: 26px;
-    color: var(--gss-contacts-accent);
+    color: var(--accent-color);
     font-size: 24px;
     font-weight: 400;
     line-height: 1.05;
@@ -134,7 +126,7 @@
   &__email {
     display: inline-flex;
     margin-top: 28px;
-    color: var(--gss-contacts-strong);
+    color: #fff;
     font-size: 20px;
     font-weight: 400;
     line-height: 1.2;
@@ -155,7 +147,7 @@
 
   &__work-time {
     margin: 24px 0 0;
-    color: var(--gss-contacts-strong);
+    color: #fff;
     font-size: 20px;
     line-height: 1.25;
   }
@@ -199,7 +191,7 @@
 
   &__sro-title {
     margin: 0;
-    color: var(--gss-contacts-muted);
+    color: var(--color-line-contact);
     font-size: 32px;
     font-weight: 400;
     line-height: 1.1;
@@ -231,7 +223,7 @@
   &__sro-text {
     max-width: 340px;
     margin: 0;
-    color: var(--gss-contacts-text);
+    color: var(--text-color-contact);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.12;
@@ -310,7 +302,6 @@
     padding: 42px 0 48px;
 
     &__container {
-      width: min(100% - 28px, 100%);
       gap: 48px;
     }
 

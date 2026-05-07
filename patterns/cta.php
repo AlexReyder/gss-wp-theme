@@ -15,7 +15,7 @@ $theme_uri = get_template_directory_uri();
 ?>
 
 <!-- wp:group {"tagName":"section","className":"gss-cta"} -->
-<section class="wp-block-group gss-cta" aria-labelledby="gss-cta-title">
+<section class="wp-block-group gss-cta">
 
 	<!-- wp:group {"className":"gss-cta__card"} -->
 	<div class="wp-block-group gss-cta__card">
@@ -24,7 +24,7 @@ $theme_uri = get_template_directory_uri();
 		<div class="wp-block-group gss-cta__content">
 
 			<!-- wp:heading {"level":2,"className":"gss-cta__title"} -->
-			<h2 class="wp-block-heading gss-cta__title" id="gss-cta-title">Получите расчет стоимости работ</h2>
+			<h2 class="wp-block-heading gss-cta__title">Получите расчет стоимости работ</h2>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"className":"gss-cta__subtitle"} -->
@@ -94,7 +94,7 @@ $theme_uri = get_template_directory_uri();
 			<!-- wp:heading {"level":3,"className":"gss-cta__form-title"} -->
 			<h3 class="wp-block-heading gss-cta__form-title">Заполните форму:</h3>
 			<!-- /wp:heading -->
-
+			<!-- wp:html -->
 			<form
 				class="gss-cta__form"
 				id="gss-cta-form"
@@ -163,7 +163,7 @@ $theme_uri = get_template_directory_uri();
 					</span>
 				</label>
 			</form>
-
+			<!-- /wp:html -->
 		</div>
 		<!-- /wp:group -->
 

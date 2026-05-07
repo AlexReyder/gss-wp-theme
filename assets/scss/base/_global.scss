@@ -1,5 +1,25 @@
 :root {
+  --accent-color: #ff8a22;
+  --secondary-color: #1f6fff;
+  --text-color: #252f4c;
+
   --title-gradient: linear-gradient(90deg, #252f4c 0%, #756b8d 100%);
+  --primary-btn-gradint: linear-gradient(
+    90deg,
+    #ff8a22 0%,
+    #fe6a08 49%,
+    #ff9536 100%
+  );
+
+  --bg-color-contact: #191919;
+  --color-line-contact: #282828;
+  --text-color-contact: #535353;
+
+  --layout-width-container: min(100% - 40px, 1188px);
+
+  @media (max-width: 680px) {
+    --layout-width-container: min(100% - 32px, 100%);
+  }
 }
 body {
   font-family: "Inter", sans-serif;

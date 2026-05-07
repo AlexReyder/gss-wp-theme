@@ -86,7 +86,7 @@
             <div class="wp-block-group gss-service-card gss-service-card--project">
                 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-service-card__image"} -->
                 <figure class="wp-block-image size-full gss-service-card__image">
-                    <img src="<?php echo get_template_directory_uri() .  '/assets/images/services/3.jpg'?>" alt="Проектирование">
+                    <img src="<?php echo get_template_directory_uri() .  '/assets/images/services/4.jpg'?>" alt="Проектирование">
                 </figure>
                 <!-- /wp:image -->
 

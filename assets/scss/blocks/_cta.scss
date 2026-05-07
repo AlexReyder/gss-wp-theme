@@ -1,34 +1,18 @@
 .gss-cta {
-  --gss-cta-text: #252f4c;
-  --gss-cta-muted: rgba(37, 47, 76, 0.88);
-  --gss-cta-orange: #ff8a22;
-  --gss-cta-blue: #1f6fff;
-  --gss-cta-title-gradient: linear-gradient(90deg, #252f4c 0%, #756b8d 100%);
-  --gss-cta-button-gradient: linear-gradient(
-    90deg,
-    #ff8a22 0%,
-    #fe6a08 49%,
-    #ff9536 100%
-  );
-
   position: relative;
   padding: 40px 0;
-  color: var(--gss-cta-text);
+  color: var(--text-color);
   background-color: #fff;
-  &,
-  * {
-    box-sizing: border-box;
-  }
 
   &__card {
     position: relative;
     display: grid;
-    grid-template-columns: 320px 390px;
+    grid-template-columns: 350px 390px;
     justify-content: space-between;
     width: min(100% - 40px, 1188px);
     min-height: 368px;
     margin: 0 auto;
-    padding: 38px 20px 0 28px;
+    padding: 38px 20px 30px 28px;
     // overflow: hidden;
     border-radius: 20px;
     background-color: #f8f8f8;
@@ -47,20 +31,19 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: var(--gss-cta-text);
+    color: var(--text-color);
     font-weight: 400;
     line-height: 1.08;
-    letter-spacing: -0.02em;
   }
 
   &__title {
-    max-width: 320px;
+    // max-width: 320px;
     font-size: 28px;
   }
 
   &__subtitle {
     margin: 22px 0 0;
-    color: var(--gss-cta-orange);
+    color: var(--accent-color);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.35;
@@ -96,7 +79,7 @@
   &__benefit-text {
     max-width: 285px;
     margin: 0;
-    color: var(--gss-cta-text);
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 400;
     line-height: 1.18;
@@ -108,6 +91,7 @@
     bottom: 0;
     z-index: 1;
     width: 255px;
+    height: calc(100% + 30px);
     margin: 0;
     transform: translateX(-50%);
     pointer-events: none;
@@ -115,7 +99,7 @@
     img {
       display: block;
       width: auto;
-      height: 382px;
+      height: 100%;
       max-width: none;
       object-fit: contain;
       object-position: bottom center;
@@ -206,7 +190,7 @@
     border-radius: 14px;
     outline: none;
     background: #ffffff;
-    color: var(--gss-cta-text);
+    color: var(--text-color);
     font: inherit;
     font-size: 16px;
     font-weight: 400;
@@ -233,7 +217,7 @@
     padding: 18px 28px;
     border: 0;
     border-radius: 13px;
-    background: var(--gss-cta-button-gradient);
+    background: var(--primary-btn-gradint);
     box-shadow: 0 8px 18px rgba(254, 106, 8, 0.22);
     color: #ffffff;
     cursor: pointer;
@@ -271,7 +255,7 @@
 
   &__agreement {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
     margin-top: 34px;
     cursor: pointer;
@@ -284,16 +268,31 @@
     margin: 0;
     flex: 0 0 24px;
     appearance: none;
-    border: 1.5px solid var(--gss-cta-blue);
+    border: 1.5px solid var(--secondary-color);
     border-radius: 4px;
     background: #ffffff;
     cursor: pointer;
+    position: relative;
 
     &:checked {
-      background:
-        linear-gradient(var(--gss-cta-blue), var(--gss-cta-blue)) center / 12px
-          12px no-repeat,
-        #ffffff;
+      background: var(
+        --secondary-color
+      ); // Закрашиваем фон при клике (опционально)
+
+      &::after {
+        content: "";
+        position: absolute;
+        /* Позиционирование галочки по центру */
+        left: 8px;
+        top: 4px;
+        /* Рисуем Г-образную форму */
+        width: 6px;
+        height: 11px;
+        border: solid white; // Цвет самой галочки
+        border-width: 0 2px 2px 0;
+        /* Поворачиваем форму, чтобы она стала галочкой */
+        transform: rotate(45deg);
+      }
     }
 
     &:focus-visible {
@@ -306,18 +305,26 @@
     display: inline-flex;
     flex-wrap: wrap;
     gap: 4px;
-    color: var(--gss-cta-muted);
+    color: var(--text-color);
     font-size: 14px;
     line-height: 1.35;
   }
 
   &__agreement-link {
-    color: var(--gss-cta-blue);
+    color: var(--secondary-color);
     text-decoration: none;
 
     &:hover,
     &:focus-visible {
       text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 1012px) {
+  .gss-cta {
+    &__person {
+      display: none;
     }
   }
 }
@@ -328,22 +335,7 @@
       grid-template-columns: minmax(0, 1fr) minmax(0, 390px);
       gap: 28px;
       min-height: 0;
-      padding: 34px 24px 0;
-    }
-
-    &__person {
-      position: relative;
-      left: auto;
-      bottom: auto;
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
-      width: 100%;
-      margin-top: -28px;
-      transform: none;
-
-      img {
-        height: 320px;
-      }
+      // padding: 34px 24px 0;
     }
 
     &__form-column {
@@ -364,14 +356,13 @@
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 768px) {
   .gss-cta {
     padding: 28px 0;
 
     &__card {
       display: flex;
       flex-direction: column;
-      width: min(100% - 32px, 100%);
       padding: 28px 18px 0;
       border-radius: 18px;
     }
@@ -394,18 +385,6 @@
       max-width: none;
       font-size: 15px;
       line-height: 1.25;
-    }
-
-    &__person {
-      order: 2;
-      display: flex;
-      justify-content: center;
-      margin: 6px 0 -8px;
-
-      img {
-        height: 300px;
-        max-width: 100%;
-      }
     }
 
     &__form-column {
