@@ -1,12 +1,12 @@
 .gss-lead-popup {
   --gss-lead-popup-text: #252f4c;
   --gss-lead-popup-muted: rgba(37, 47, 76, 0.88);
-  --gss-lead-popup-orange: #fe6a08;
+  --gss-lead-popup-orange: #ff8a22;
   --gss-lead-popup-blue: #1f6fff;
   --gss-lead-popup-bg: #f7f7f8;
   --gss-lead-popup-button-gradient: linear-gradient(
     90deg,
-    #ff8a22 0%,
+    #fa9035 0%,
     #fe6a08 49%,
     #ff9536 100%
   );
@@ -113,17 +113,14 @@
   &__media {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(180deg, #ff8c24 0%, #fe6a08 100%);
+    background: linear-gradient(180deg, #fa9035 20%, #ff5000 69%, #ff6a00 100%);
   }
 
   &__media-pattern {
     position: absolute;
     inset: 0;
     opacity: 0.28;
-    background-image: radial-gradient(
-      rgba(37, 47, 76, 0.36) 1.4px,
-      transparent 1.4px
-    );
+    background-image: radial-gradient(#e28036 1.4px, transparent 1.4px);
     background-size: 18px 18px;
   }
 
@@ -374,24 +371,27 @@
     border-radius: 4px;
     background: #ffffff;
     cursor: pointer;
+    position: relative;
 
     &:checked {
-      background:
-        linear-gradient(
-            135deg,
-            transparent 0 42%,
-            var(--gss-lead-popup-orange) 42% 58%,
-            transparent 58%
-          )
-          6px 11px / 15px 3px no-repeat,
-        linear-gradient(
-            45deg,
-            transparent 0 42%,
-            var(--gss-lead-popup-orange) 42% 58%,
-            transparent 58%
-          )
-          3px 13px / 9px 3px no-repeat,
-        #ffffff;
+      background: var(
+        --secondary-color
+      ); // Закрашиваем фон при клике (опционально)
+
+      &::after {
+        content: "";
+        position: absolute;
+        /* Позиционирование галочки по центру */
+        left: 8px;
+        top: 4px;
+        /* Рисуем Г-образную форму */
+        width: 6px;
+        height: 11px;
+        border: solid white; // Цвет самой галочки
+        border-width: 0 2px 2px 0;
+        /* Поворачиваем форму, чтобы она стала галочкой */
+        transform: rotate(45deg);
+      }
     }
 
     &:focus-visible {
@@ -445,7 +445,7 @@
 @media (max-width: 900px) {
   .gss-lead-popup {
     overflow-y: auto;
-    align-items: start;
+    align-items: center;
     padding: 20px;
 
     &__dialog {
@@ -455,6 +455,7 @@
     }
 
     &__media {
+      display: none;
       min-height: 360px;
     }
 
@@ -509,6 +510,12 @@
     &__agreement {
       margin-top: 24px;
     }
+  }
+}
+
+@media (max-width: 402px) {
+  .gss-lead-popup__intro {
+    margin-top: 30px;
   }
 }
 

@@ -1,4 +1,5 @@
 @use "../abstracts/mixins" as *;
+
 .gss-about {
   position: relative;
   isolation: isolate;
@@ -90,6 +91,7 @@
   position: relative;
   min-height: 554px;
   background-image: url("data:image/svg+xml,%3Csvg width='486' height='558' viewBox='0 0 486 558' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M409.793 2.7865C450.343 -0.916744 484.916 31.8568 483.384 72.5472L468.715 462.007C467.43 496.108 440.897 523.886 406.891 526.732L75.6394 554.452C33.2303 558 -1.84102 521.896 2.93726 479.608L46.9607 89.9984C50.5558 58.182 76.0091 33.2689 107.895 30.3568L409.793 2.7865Z' fill='%23FF6600'/%3E%3Cpath d='M409.793 2.7865C450.343 -0.916744 484.916 31.8568 483.384 72.5472L468.715 462.007C467.43 496.108 440.897 523.886 406.891 526.732L75.6394 554.452C33.2303 558 -1.84102 521.896 2.93726 479.608L46.9607 89.9984C50.5558 58.182 76.0091 33.2689 107.895 30.3568L409.793 2.7865Z' fill='url(%23paint0_radial_2022_107)'/%3E%3Cpath d='M409.793 2.7865C450.343 -0.916744 484.916 31.8568 483.384 72.5472L468.715 462.007C467.43 496.108 440.897 523.886 406.891 526.732L75.6394 554.452C33.2303 558 -1.84102 521.896 2.93726 479.608L46.9607 89.9984C50.5558 58.182 76.0091 33.2689 107.895 30.3568L409.793 2.7865Z' stroke='%23FFE0AA' stroke-width='5'/%3E%3Cdefs%3E%3CradialGradient id='paint0_radial_2022_107' cx='0' cy='0' r='1' gradientTransform='matrix(-187.844 319.091 -430.308 -231.099 334.641 135.632)' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFC899'/%3E%3Cstop offset='0.197115' stop-color='%23FA9035'/%3E%3Cstop offset='0.6875' stop-color='%23FF5000'/%3E%3Cstop offset='1' stop-color='%23FF6A00'/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E");
+  // background-image: url("data:image/svg+xml,%3Csvg width='486' height='558' viewBox='0 0 486 558' preserveAspectRatio='none' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M409.793 2.7865C450.343 -0.916744 484.916 31.8568 483.384 72.5472L468.715 462.007C467.43 496.108 440.897 523.886 406.891 526.732L75.6394 554.452C33.2303 558 -1.84102 521.896 2.93726 479.608L46.9607 89.9984C50.5558 58.182 76.0091 33.2689 107.895 30.3568L409.793 2.7865Z' fill='%23FF6600'/%3E%3Cpath d='M409.793 2.7865C450.343 -0.916744 484.916 31.8568 483.384 72.5472L468.715 462.007C467.43 496.108 440.897 523.886 406.891 526.732L75.6394 554.452C33.2303 558 -1.84102 521.896 2.93726 479.608L46.9607 89.9984C50.5558 58.182 76.0091 33.2689 107.895 30.3568L409.793 2.7865Z' fill='url(%23paint0_radial_2022_107)'/%3E%3Cpath d='M409.793 2.7865C450.343 -0.916744 484.916 31.8568 483.384 72.5472L468.715 462.007C467.43 496.108 440.897 523.886 406.891 526.732L75.6394 554.452C33.2303 558 -1.84102 521.896 2.93726 479.608L46.9607 89.9984C50.5558 58.182 76.0091 33.2689 107.895 30.3568L409.793 2.7865Z' stroke='%23FFE0AA' stroke-width='5'/%3E%3Cdefs%3E%3CradialGradient id='paint0_radial_2022_107' cx='0' cy='0' r='1' gradientTransform='matrix(-187.844 319.091 -430.308 -231.099 334.641 135.632)' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFC899'/%3E%3Cstop offset='0.197115' stop-color='%23FA9035'/%3E%3Cstop offset='0.6875' stop-color='%23FF5000'/%3E%3Cstop offset='1' stop-color='%23FF6A00'/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -244,7 +246,128 @@
   }
 }
 
-@media (max-width: 680px) {
+// @media (max-width: 680px) {
+//   .gss-about {
+//     padding: 48px 0 34px;
+//     background-size: 18px 18px;
+//   }
+
+//   .gss-about__top {
+//     gap: 56px;
+//   }
+
+//   .gss-about__title {
+//     margin-bottom: 34px;
+//     font-size: 28px;
+//     line-height: 1.12;
+//   }
+
+//   .gss-about__features {
+//     grid-template-columns: 1fr;
+//     gap: 26px;
+//   }
+
+//   .gss-about-feature {
+//     grid-template-columns: 78px minmax(0, 1fr);
+//     min-height: 72px;
+//   }
+
+//   .gss-about-feature__icon {
+//     width: 70px;
+//   }
+
+//   .gss-about-feature__title {
+//     font-size: 20px;
+//   }
+
+//   .gss-about-feature__text {
+//     font-size: 16px;
+//   }
+
+//   .gss-about-highlight {
+//     min-height: auto;
+//     // padding-top: 115px;
+//     background-image: none;
+//     position: relative;
+//     min-height: 550px;
+//   }
+
+//   .gss-about-highlight::before {
+//     content: "";
+//     position: absolute;
+//     inset: 0;
+//     z-index: -1;
+//     border: 5px solid #ffe0aa;
+//     border-radius: 16% 13% 18% 15% / 9% 8% 11% 10%;
+//     background: radial-gradient(
+//       circle at 62% 24%,
+//       #ffc899 0%,
+//       #fa9035 22%,
+//       #ff5000 68%,
+//       #ff6a00 100%
+//     );
+//     transform: skewY(-3deg) rotate(-1deg);
+//     transform-origin: center;
+//   }
+
+//   .gss-about-highlight__image {
+//     top: 0;
+//     width: min(330px, 92vw);
+//   }
+
+//   .gss-about-highlight__card {
+//     position: relative;
+//     width: 100%;
+//     min-height: auto;
+//     padding: 185px 30px 42px;
+//     border-width: 5px;
+//     clip-path: polygon(
+//       8% 4%,
+//       100% 0,
+//       100% 86%,
+//       94% 97%,
+//       82% 100%,
+//       9% 100%,
+//       0 94%,
+//       3% 65%,
+//       5% 26%
+//     );
+//   }
+
+//   .gss-about-highlight__title {
+//     margin-bottom: 20px;
+//     font-size: 25px;
+//     line-height: 1.16;
+//   }
+
+//   .gss-about-highlight__text {
+//     font-size: 15px;
+//     line-height: 1.22;
+//   }
+
+//   .gss-about__advantages {
+//     grid-template-columns: repeat(2, minmax(0, 1fr));
+//     gap: 34px 22px;
+//     margin-top: 46px;
+//   }
+
+//   .gss-about-advantage__icon {
+//     height: 92px;
+//     margin-bottom: 10px;
+
+//     img {
+//       max-width: 128px;
+//       max-height: 92px;
+//     }
+//   }
+
+//   .gss-about-advantage__text {
+//     font-size: 15px;
+//     line-height: 1.1;
+//   }
+// }
+
+@media (max-width: 516px) {
   .gss-about {
     padding: 48px 0 34px;
     background-size: 18px 18px;
@@ -284,67 +407,42 @@
 
   .gss-about-highlight {
     min-height: auto;
-    padding-top: 115px;
-  }
-
-  .gss-about-highlight__image {
-    top: 0;
-    width: min(330px, 92vw);
-  }
-
-  .gss-about-highlight__card {
+    background-image: none;
     position: relative;
-    width: 100%;
-    min-height: auto;
-    padding: 185px 30px 42px;
-    border-width: 5px;
-    clip-path: polygon(
-      8% 4%,
-      100% 0,
-      100% 86%,
-      94% 97%,
-      82% 100%,
-      9% 100%,
-      0 94%,
-      3% 65%,
-      5% 26%
+    min-height: 550px;
+    height: 100%;
+    margin: 60px 0;
+  }
+
+  .gss-about-highlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border: 5px solid #ffe0aa;
+    border-radius: 16% 13% 18% 15% / 9% 8% 11% 10%;
+    background: radial-gradient(
+      circle at 62% 24%,
+      #ffc899 0%,
+      #fa9035 22%,
+      #ff5000 68%,
+      #ff6a00 100%
     );
+    transform: skewY(-3deg) rotate(-1deg);
+    transform-origin: center;
   }
 
   .gss-about-highlight__title {
-    margin-bottom: 20px;
-    font-size: 25px;
-    line-height: 1.16;
+    font-size: 20px;
   }
 
-  .gss-about-highlight__text {
-    font-size: 15px;
-    line-height: 1.22;
+  .gss-about-highlight__card {
+    margin-top: 80px;
   }
 
   .gss-about__advantages {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 34px 22px;
-    margin-top: 46px;
+    margin-top: 130px;
   }
-
-  .gss-about-advantage__icon {
-    height: 92px;
-    margin-bottom: 10px;
-
-    img {
-      max-width: 128px;
-      max-height: 92px;
-    }
-  }
-
-  .gss-about-advantage__text {
-    font-size: 15px;
-    line-height: 1.1;
-  }
-}
-
-@media (max-width: 513px) {
 }
 
 @media (max-width: 380px) {

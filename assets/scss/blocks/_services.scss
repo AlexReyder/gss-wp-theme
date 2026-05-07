@@ -1,7 +1,10 @@
+@use "../abstracts/mixins" as *;
+
 .gss-services {
   padding: 34px 0 26px;
   background: #ffffff;
   color: var(--text-color);
+  @include bg_pattern;
 
   :where(
     .wp-block-group,
@@ -93,7 +96,6 @@
   font-size: 32px;
   font-weight: 800;
   line-height: 1.03;
-  letter-spacing: -0.035em;
   -webkit-text-fill-color: transparent;
 }
 
@@ -102,7 +104,6 @@
   font-size: 17px;
   font-weight: 400;
   line-height: 1.14;
-  letter-spacing: -0.025em;
 }
 
 .gss-service-card--heat {

@@ -57,10 +57,13 @@
   inset: 0;
   z-index: 1000;
   overflow-y: auto;
-  background: #ffffff;
+  // background: #ffffff;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition:
     opacity 0.26s ease,
     visibility 0.26s ease;
@@ -84,20 +87,23 @@
   &__overlay {
     position: fixed;
     inset: 0;
-    background: #ffffff;
+    background: rgba($color: #000000, $alpha: 0.3);
   }
 
   &__dialog {
+    overflow: auto;
     position: relative;
     z-index: 1;
     width: min(100% - 72px, 870px);
-    min-height: 100vh;
+    height: 95vh;
     margin: 0 auto;
     padding: 64px 0 72px;
     background: #ffffff;
+    border-radius: 50px;
     color: #7a7a7a;
     opacity: 0;
     outline: none;
+    padding: 65px 59px 37px 36px;
     transform: translateY(18px);
     transition:
       opacity 0.26s ease,
@@ -219,20 +225,20 @@
       grid-template-columns: 1fr;
       justify-content: stretch;
       gap: 14px;
-      width: min(100% - 32px, 100%);
+      // width: min(100% - 32px, 100%);
     }
   }
 
   .gss-policy-popup {
     &__dialog {
-      width: min(100% - 40px, 100%);
-      padding: 56px 0 64px;
+      // width: min(100% - 40px, 100%);
+      // padding: 56px 0 64px;
     }
 
-    &__close {
-      top: 24px;
-      right: 24px;
-    }
+    // &__close {
+    //   top: 24px;
+    //   right: 24px;
+    // }
   }
 }
 
@@ -248,12 +254,18 @@
   .gss-policy-popup {
     &__dialog {
       width: min(100% - 28px, 100%);
-      padding: 52px 0 56px;
+      padding: 20px;
+    }
+
+    &__close {
+      top: 20px;
+      right: 30px;
     }
 
     &__content {
       font-size: 15px;
       line-height: 1.25;
+      margin-top: 30px;
 
       h1,
       h2 {

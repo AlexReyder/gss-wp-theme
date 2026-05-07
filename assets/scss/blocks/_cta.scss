@@ -1,8 +1,10 @@
+@use "../abstracts/mixins" as *;
+
 .gss-cta {
   position: relative;
   padding: 40px 0;
   color: var(--text-color);
-  background-color: #fff;
+  @include bg_pattern;
 
   &__card {
     position: relative;
