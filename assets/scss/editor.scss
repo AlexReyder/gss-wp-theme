@@ -131,6 +131,20 @@
     margin-block-end: 0;
   }
 
+  .gss-hero::before,
+  .gss-hero__main,
+  .gss-hero__directions,
+  .gss-hero__title,
+  .gss-hero__lead,
+  .gss-hero__actions,
+  .gss-hero-direction {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    transition-delay: 0ms !important;
+    will-change: auto !important;
+  }
+
   .gss-reveal,
   .gss-reveal.is-visible,
   [data-gss-reveal],
