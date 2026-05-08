@@ -104,11 +104,11 @@
 
                 <!-- wp:buttons {"className":"gss-service-card__actions"} -->
                 <div class="wp-block-buttons gss-service-card__actions">
-                    <!-- wp:button {"className":"gss-service-card__button"} -->
-                    <div class="wp-block-button gss-service-card__button">
-                        <a class="wp-block-button__link wp-element-button" href="#" data-gss-popup-open="lead">Получить расчет</a>
-                    </div>
-                    <!-- /wp:button -->
+                   <!-- wp:button {"url":"#","className":"gss-service-card__button"} -->
+<div class="wp-block-button gss-service-card__button">
+    <a class="wp-block-button__link wp-element-button" href="#">Получить расчет</a>
+</div>
+<!-- /wp:button -->
                 </div>
                 <!-- /wp:buttons -->
             </div>

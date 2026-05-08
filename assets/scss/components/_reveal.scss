@@ -1,0 +1,32 @@
+.gss-reveal {
+  --gss-reveal-y: 24px;
+  --gss-reveal-duration: 720ms;
+  --gss-reveal-delay: 0ms;
+  --gss-reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.gss-reveal-enabled .gss-reveal {
+  opacity: 0;
+  transform: translate3d(0, var(--gss-reveal-y), 0);
+  transition:
+    opacity var(--gss-reveal-duration) var(--gss-reveal-easing),
+    transform var(--gss-reveal-duration) var(--gss-reveal-easing);
+  transition-delay: var(--gss-reveal-delay);
+  will-change: opacity, transform;
+}
+
+html.gss-reveal-enabled .gss-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.gss-reveal-enabled .gss-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0ms;
+    will-change: auto;
+  }
+}

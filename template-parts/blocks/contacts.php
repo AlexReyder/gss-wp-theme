@@ -116,7 +116,9 @@ $sro_image_alt = is_array($sro_image) && !empty($sro_image['alt'])
     ? $sro_image['alt']
     : $sro_title;
 
-$block_id = 'gss-contacts-' . ($block['id'] ?? uniqid());
+$block_id = !empty($block['anchor'])
+    ? $block['anchor']
+    : 'contacts';
 ?>
 
 <section id="<?php echo esc_attr($block_id); ?>" class="gss-contacts">
