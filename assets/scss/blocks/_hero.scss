@@ -1,5 +1,9 @@
 .gss-hero {
   --gss-hero-bg: url("http://localhost/gss/wp-content/uploads/2026/05/hero.jpg");
+  --gss-hero-parallax-x: 0px;
+  --gss-hero-parallax-y: 0px;
+  --gss-hero-content-x: 0px;
+  --gss-hero-content-y: 0px;
 
   position: relative;
   isolation: isolate;
@@ -29,10 +33,19 @@
 
   &::before {
     z-index: -2;
+    inset: -42px;
     background-image: var(--gss-hero-bg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    transform: translate3d(
+        var(--gss-hero-parallax-x),
+        var(--gss-hero-parallax-y),
+        0
+      )
+      scale(1.06);
+    transition: transform 0.12s linear;
+    will-change: transform;
   }
 
   &::after {
@@ -66,6 +79,17 @@
   margin-inline: auto;
   padding: 156px 0 42px;
   height: 100%;
+}
+
+.gss-hero__main,
+.gss-hero__directions {
+  transform: translate3d(
+    var(--gss-hero-content-x),
+    var(--gss-hero-content-y),
+    0
+  );
+  transition: transform 0.16s linear;
+  will-change: transform;
 }
 
 .gss-hero__main {
@@ -191,6 +215,22 @@
 }
 
 @media (max-width: 680px) {
+  .gss-hero {
+    --gss-hero-parallax-x: 0px;
+    --gss-hero-parallax-y: 0px;
+    --gss-hero-content-x: 0px;
+    --gss-hero-content-y: 0px;
+  }
+
+  .gss-hero::before {
+    inset: 0;
+    transform: none;
+  }
+
+  .gss-hero__main,
+  .gss-hero__directions {
+    transform: none;
+  }
   .gss-hero {
     min-height: 720px;
 

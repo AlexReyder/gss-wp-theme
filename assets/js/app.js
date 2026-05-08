@@ -5,10 +5,12 @@ import { initProjectsGallery } from "./modules/projects-gallery";
 import { initLeadForms } from "./modules/lead-form";
 import { initFooterPopups } from "./modules/footer-popups";
 import { initCookieBanner } from "./modules/cookie-banner";
+import { initHeroParallax } from "./modules/hero-parallax";
 
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initSmoothScroll();
+  initHeroParallax();
   initProjectsGallery();
   initLeadForms();
   initFooterPopups();
