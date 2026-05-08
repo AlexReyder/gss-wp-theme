@@ -25,5 +25,6 @@ require_once GARANT_THEME_DIR . '/inc/acf/options.php';
 require_once GARANT_THEME_DIR . '/inc/acf/projects.php';
 require_once GARANT_THEME_DIR . '/inc/acf/leads.php';
 require_once GARANT_THEME_DIR . '/inc/acf/contacts.php';
+require_once GARANT_THEME_DIR . '/inc/acf/header.php';
 
 require_once GARANT_THEME_DIR . '/inc/forms/lead-form-handler.php';

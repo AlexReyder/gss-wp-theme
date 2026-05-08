@@ -12,7 +12,7 @@
     justify-content: center;
     column-gap: 84px;
     align-items: center;
-    width: min(100% - 40px, 1200px);
+    width: var(--layout-width-container);
     margin: 0 auto;
   }
 

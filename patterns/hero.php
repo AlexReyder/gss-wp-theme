@@ -4,7 +4,7 @@
  * Slug: gss/hero
  * Categories: gss
  * Inserter: true
- * Description: Первый экран лендинга с большим заголовком, CTA и списком направлений.
+ * Description: Первый экран лендинга с заголовком, CTA и направлениями работ.
  */
 
 if (!defined('ABSPATH')) {
@@ -14,62 +14,100 @@ if (!defined('ABSPATH')) {
 
 <!-- wp:group {"tagName":"section","className":"gss-hero","layout":{"type":"default"}} -->
 <section class="wp-block-group gss-hero">
-	<div class="gss-hero__background" aria-hidden="true">
-		<div class="gss-hero__background-placeholder">
-			<span>Placeholder для фоновой фотографии Hero</span>
+
+	<!-- wp:group {"className":"gss-hero__container","layout":{"type":"default"}} -->
+	<div class="wp-block-group gss-hero__container">
+
+		<!-- wp:group {"className":"gss-hero__main","layout":{"type":"default"}} -->
+		<div class="wp-block-group gss-hero__main">
+
+			<!-- wp:heading {"level":1,"className":"gss-hero__title"} -->
+			<h1 class="wp-block-heading gss-hero__title">СТРОИТЕЛЬСТВО<br>И ПРОЕКТИРОВАНИЕ<br>ИНЖЕНЕРНЫХ СИСТЕМ</h1>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"className":"gss-hero__lead"} -->
+			<p class="gss-hero__lead">Берём на себя полный цикл — от проекта до ввода объекта в эксплуатацию</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:buttons {"className":"gss-hero__actions","layout":{"type":"flex","justifyContent":"left"}} -->
+			<div class="wp-block-buttons gss-hero__actions">
+
+				<!-- wp:button {"url":"#","className":"gss-hero__button"} -->
+				<div class="wp-block-button gss-hero__button">
+					<a class="wp-block-button__link wp-element-button" href="#">Получить расчет</a>
+				</div>
+				<!-- /wp:button -->
+
+			</div>
+			<!-- /wp:buttons -->
+
 		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:group {"className":"gss-hero__directions","layout":{"type":"default"}} -->
+		<div class="wp-block-group gss-hero__directions">
+
+			<!-- wp:group {"className":"gss-hero-direction","layout":{"type":"default"}} -->
+			<div class="wp-block-group gss-hero-direction">
+
+				<!-- wp:heading {"level":3,"className":"gss-hero-direction__title"} -->
+				<h3 class="wp-block-heading gss-hero-direction__title">Проектирование</h3>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph {"className":"gss-hero-direction__text"} -->
+				<p class="gss-hero-direction__text">Выполняем полный цикл строительных работ с соблюдением сроков и технических требований</p>
+				<!-- /wp:paragraph -->
+
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:group {"className":"gss-hero-direction","layout":{"type":"default"}} -->
+			<div class="wp-block-group gss-hero-direction">
+
+				<!-- wp:heading {"level":3,"className":"gss-hero-direction__title"} -->
+				<h3 class="wp-block-heading gss-hero-direction__title">Строительство</h3>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph {"className":"gss-hero-direction__text"} -->
+				<p class="gss-hero-direction__text">Ключевая специализация — монтаж и подключение надежных инженерных сетей</p>
+				<!-- /wp:paragraph -->
+
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:group {"className":"gss-hero-direction","layout":{"type":"default"}} -->
+			<div class="wp-block-group gss-hero-direction">
+
+				<!-- wp:heading {"level":3,"className":"gss-hero-direction__title"} -->
+				<h3 class="wp-block-heading gss-hero-direction__title">Тепло- и водоснабжение</h3>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph {"className":"gss-hero-direction__text"} -->
+				<p class="gss-hero-direction__text">Профессиональный монтаж и модернизация инженерных сетей</p>
+				<!-- /wp:paragraph -->
+
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:group {"className":"gss-hero-direction","layout":{"type":"default"}} -->
+			<div class="wp-block-group gss-hero-direction">
+
+				<!-- wp:heading {"level":3,"className":"gss-hero-direction__title"} -->
+				<h3 class="wp-block-heading gss-hero-direction__title">Алмазное бурение</h3>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph {"className":"gss-hero-direction__text"} -->
+				<p class="gss-hero-direction__text">Точное бурение и резка бетона без вибрации и повреждений конструкций</p>
+				<!-- /wp:paragraph -->
+
+			</div>
+			<!-- /wp:group -->
+
+		</div>
+		<!-- /wp:group -->
+
 	</div>
+	<!-- /wp:group -->
 
-	<div class="gss-hero__overlay" aria-hidden="true"></div>
-
-	<div class="gss-hero__container">
-		<div class="gss-hero__content">
-			<h1 class="gss-hero__title">
-				СТРОИТЕЛЬСТВО<br>
-				И ПРОЕКТИРОВАНИЕ<br>
-				ИНЖЕНЕРНЫХ СИСТЕМ
-			</h1>
-
-			<p class="gss-hero__text">
-				Берём на себя полный цикл — от проекта до ввода объекта в эксплуатацию
-			</p>
-
-			<div class="gss-hero__actions">
-				<button class="gss-button gss-hero__button" type="button">
-					Получить расчет
-				</button>
-			</div>
-		</div>
-
-		<div class="gss-hero__advantages">
-			<div class="gss-hero__advantage">
-				<h3 class="gss-hero__advantage-title">Проектирование</h3>
-				<p class="gss-hero__advantage-text">
-					Выполняем полный цикл строительных работ с соблюдением сроков и технических требований
-				</p>
-			</div>
-
-			<div class="gss-hero__advantage">
-				<h3 class="gss-hero__advantage-title">Строительство</h3>
-				<p class="gss-hero__advantage-text">
-					Ключевая специализация — монтаж и подключение надежных инженерных сетей
-				</p>
-			</div>
-
-			<div class="gss-hero__advantage">
-				<h3 class="gss-hero__advantage-title">Тепло- и водоснабжение</h3>
-				<p class="gss-hero__advantage-text">
-					Профессиональный монтаж и модернизация инженерных систем
-				</p>
-			</div>
-
-			<div class="gss-hero__advantage">
-				<h3 class="gss-hero__advantage-title">Алмазное бурение</h3>
-				<p class="gss-hero__advantage-text">
-					Точное бурение и резка бетона без вибрации и повреждений конструкций
-				</p>
-			</div>
-		</div>
-	</div>
 </section>
 <!-- /wp:group -->

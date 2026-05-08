@@ -107,4 +107,21 @@
   .wp-block-acf-contacts {
     max-width: 100% !important;
   }
+
+  .gss-hero {
+    max-width: none !important;
+    width: 100%;
+  }
+
+  .gss-hero
+    :where(
+      .wp-block-group,
+      .wp-block-heading,
+      p,
+      .wp-block-buttons,
+      .wp-block-button
+    ) {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
 }
