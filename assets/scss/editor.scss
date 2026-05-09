@@ -185,6 +185,10 @@
     will-change: auto !important;
   }
 
+  .gss-hero::after {
+    display: none !important;
+  }
+
   .gss-reveal,
   .gss-reveal.is-visible,
   [data-gss-reveal],

@@ -5,6 +5,7 @@
   isolation: isolate;
   overflow: hidden;
   padding: 78px 0 29px;
+  padding-top: 120px;
   @include bg_pattern;
 
   :where(.wp-block-group, .wp-block-image, .wp-block-heading, p) {
@@ -187,6 +188,12 @@
   color: var(--text-color);
   font-size: 18px;
   font-weight: 400;
+}
+
+@media (min-width: 1170px) {
+  .gss-about-highlight__image {
+    top: -110px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -438,6 +445,10 @@
 
   .gss-about-highlight__card {
     margin-top: 80px;
+  }
+
+  .gss-about-highlight__image {
+    top: -20px;
   }
 
   .gss-about__advantages {
