@@ -185,17 +185,11 @@
 
 /* Entrance animation */
 
-html.gss-hero-motion-enabled .gss-hero .wp-block-cover__image-background {
-  opacity: 0;
-}
-
-html.gss-hero-motion-enabled
-  .gss-hero.is-ready
+.gss-hero.is-entrance-enabled {
   .wp-block-cover__image-background {
-  opacity: 1;
-}
+    opacity: 0;
+  }
 
-html.gss-hero-motion-enabled {
   .gss-hero__title,
   .gss-hero__lead,
   .gss-hero__actions,
@@ -236,7 +230,11 @@ html.gss-hero-motion-enabled {
     transition-delay: 0.58s;
   }
 
-  .gss-hero.is-ready {
+  &.is-ready {
+    .wp-block-cover__image-background {
+      opacity: 1;
+    }
+
     .gss-hero__title,
     .gss-hero__lead,
     .gss-hero__actions,

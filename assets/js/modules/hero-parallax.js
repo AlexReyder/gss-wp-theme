@@ -41,14 +41,6 @@ export function initHeroParallax() {
     return;
   }
 
-  document.documentElement.classList.add("gss-hero-motion-enabled");
-
-  window.requestAnimationFrame(() => {
-    window.requestAnimationFrame(() => {
-      hero.classList.add("is-ready");
-    });
-  });
-
   let targetX = 0;
   let targetY = 0;
   let currentX = 0;
@@ -198,9 +190,6 @@ export function initHeroParallax() {
       resetHeroVars();
       return;
     }
-
-    document.documentElement.classList.add("gss-hero-motion-enabled");
-    hero.classList.add("is-ready");
 
     if (canUseParallax.matches) {
       enableParallax();
