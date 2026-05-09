@@ -20,7 +20,7 @@
             <div class="wp-block-group gss-service-card gss-service-card--heat">
                 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-service-card__image"} -->
                 <figure class="wp-block-image size-full gss-service-card__image">
-                    <img src="<?php echo get_template_directory_uri() .  '/assets/images/services/1.jpg'?>" alt="Тепло и водоснабжение">
+                    <img src="<?php echo get_template_directory_uri() .  '/assets/images/services/1.webp'?>" alt="Тепло и водоснабжение">
                 </figure>
                 <!-- /wp:image -->
 
@@ -42,7 +42,7 @@
             <div class="wp-block-group gss-service-card gss-service-card--build">
                 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-service-card__image"} -->
                 <figure class="wp-block-image size-full gss-service-card__image">
-                    <img src="<?php echo get_template_directory_uri() .  '/assets/images/services/2.jpg'?>" alt="Строительство">
+                    <img src="<?php echo get_template_directory_uri() .  '/assets/images/services/2.webp'?>" alt="Строительство">
                 </figure>
                 <!-- /wp:image -->
 
@@ -64,7 +64,7 @@
             <div class="wp-block-group gss-service-card gss-service-card--drilling">
                 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-service-card__image"} -->
                 <figure class="wp-block-image size-full gss-service-card__image">
-                    <img src="<?php echo get_template_directory_uri() .  '/assets/images/services/3.jpg'?>" alt="Алмазное бурение">
+                    <img src="<?php echo get_template_directory_uri() .  '/assets/images/services/3.webp'?>" alt="Алмазное бурение">
                 </figure>
                 <!-- /wp:image -->
 
@@ -86,7 +86,7 @@
             <div class="wp-block-group gss-service-card gss-service-card--project">
                 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-service-card__image"} -->
                 <figure class="wp-block-image size-full gss-service-card__image">
-                    <img src="<?php echo get_template_directory_uri() .  '/assets/images/services/4.jpg'?>" alt="Проектирование">
+                    <img src="<?php echo get_template_directory_uri() .  '/assets/images/services/4.webp'?>" alt="Проектирование">
                 </figure>
                 <!-- /wp:image -->
 

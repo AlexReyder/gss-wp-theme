@@ -32,9 +32,19 @@
   .gss-about__container {
     max-width: 970px !important;
   }
+  .gss-about__title {
+    margin-bottom: 20px !important;
+  }
 
   .gss-services__container {
     max-width: 968px !important;
+  }
+
+  .gss-about-highlight__image {
+    position: absolute !important;
+  }
+  .gss-about-highlight__title {
+    margin: 0 0 23px !important;
   }
 
   .gss-about,
@@ -51,6 +61,14 @@
     }
   }
 
+  .gss-service-card__image {
+    position: absolute !important;
+  }
+
+  .gss-service-card__actions {
+    position: absolute !important;
+  }
+
   .gss-projects {
     max-width: none !important;
     width: 100%;
@@ -58,6 +76,10 @@
 
   .gss-projects__container {
     max-width: 968px !important;
+    width: 100%;
+  }
+  .wp-block-acf-projects {
+    max-width: 100% !important;
   }
 
   .gss-projects :where(.wp-block-group, .wp-block-image, .wp-block-heading, p) {
@@ -96,7 +118,19 @@
     margin-block-end: 0;
   }
 
+  .gss-cta .block-editor-plain-text {
+    display: none !important;
+  }
+
+  .gss-cta__person {
+    position: absolute !important;
+  }
+  .gss-cta__subtitle {
+    margin: 20px 0 !important;
+  }
+
   .gss-cta__form {
+    display: none;
     pointer-events: none;
   }
 
@@ -116,6 +150,12 @@
 
     .gss-hero__container {
       width: var(--layout-width-container) !important;
+    }
+    .gss-hero__title {
+      margin-bottom: 20px !important;
+    }
+    .gss-hero__lead {
+      margin-bottom: 20px !important;
     }
   }
 

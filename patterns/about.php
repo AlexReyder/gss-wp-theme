@@ -32,7 +32,7 @@ $image_url = esc_url( get_template_directory_uri() . '/assets/images/advantages/
                     <div class="wp-block-group gss-about-feature gss-about-feature--accent">
                         <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-about-feature__icon"} -->
                         <figure class="wp-block-image size-full gss-about-feature__icon">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/1.png' ?>" alt="">
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/1.webp' ?>" alt="">
                         </figure>
                         <!-- /wp:image -->
 
@@ -54,7 +54,7 @@ $image_url = esc_url( get_template_directory_uri() . '/assets/images/advantages/
                     <div class="wp-block-group gss-about-feature">
                         <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-about-feature__icon"} -->
                         <figure class="wp-block-image size-full gss-about-feature__icon">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/2.png' ?>" alt="">
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/2.webp' ?>" alt="">
                         </figure>
                         <!-- /wp:image -->
 
@@ -76,7 +76,7 @@ $image_url = esc_url( get_template_directory_uri() . '/assets/images/advantages/
                     <div class="wp-block-group gss-about-feature gss-about-feature--accent">
                         <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-about-feature__icon"} -->
                         <figure class="wp-block-image size-full gss-about-feature__icon">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/3.png' ?>" alt="">
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/3.webp' ?>" alt="">
                         </figure>
                         <!-- /wp:image -->
 
@@ -98,7 +98,7 @@ $image_url = esc_url( get_template_directory_uri() . '/assets/images/advantages/
                     <div class="wp-block-group gss-about-feature">
                         <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-about-feature__icon"} -->
                         <figure class="wp-block-image size-full gss-about-feature__icon">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/4.png' ?>" alt="">
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/4.webp' ?>" alt="">
                         </figure>
                         <!-- /wp:image -->
 
@@ -127,7 +127,7 @@ $image_url = esc_url( get_template_directory_uri() . '/assets/images/advantages/
 
                 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-about-highlight__image"} -->
                 <figure class="wp-block-image size-full gss-about-highlight__image">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/5.png' ?>" alt="">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/5.webp' ?>" alt="">
                 </figure>
                 <!-- /wp:image -->
 
@@ -156,7 +156,7 @@ $image_url = esc_url( get_template_directory_uri() . '/assets/images/advantages/
             <div class="wp-block-group gss-about-advantage">
                 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-about-advantage__icon"} -->
                 <figure class="wp-block-image size-full gss-about-advantage__icon">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/6.png' ?>" alt="">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/6.webp' ?>" alt="">
                 </figure>
                 <!-- /wp:image -->
 
@@ -170,7 +170,7 @@ $image_url = esc_url( get_template_directory_uri() . '/assets/images/advantages/
             <div class="wp-block-group gss-about-advantage">
                 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-about-advantage__icon"} -->
                 <figure class="wp-block-image size-full gss-about-advantage__icon">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/7.png' ?>" alt="">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/7.webp' ?>" alt="">
                 </figure>
                 <!-- /wp:image -->
 
@@ -184,7 +184,7 @@ $image_url = esc_url( get_template_directory_uri() . '/assets/images/advantages/
             <div class="wp-block-group gss-about-advantage">
                 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-about-advantage__icon"} -->
                 <figure class="wp-block-image size-full gss-about-advantage__icon">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/8.png' ?>" alt="">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/8.webp' ?>" alt="">
                 </figure>
                 <!-- /wp:image -->
 
@@ -198,7 +198,7 @@ $image_url = esc_url( get_template_directory_uri() . '/assets/images/advantages/
             <div class="wp-block-group gss-about-advantage">
                 <!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-about-advantage__icon"} -->
                 <figure class="wp-block-image size-full gss-about-advantage__icon">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/9.png' ?>" alt="">
+                    <img src="<?php echo get_template_directory_uri() . '/assets/images/advantages/9.webp' ?>" alt="">
                 </figure>
                 <!-- /wp:image -->
 

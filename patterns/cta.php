@@ -84,7 +84,7 @@ $theme_uri = get_template_directory_uri();
 
 		<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"gss-cta__person"} -->
 		<figure class="wp-block-image size-full gss-cta__person">
-			<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/person.png'); ?>" alt="">
+			<img src="<?php echo esc_url($theme_uri . '/assets/images/cta/person.webp'); ?>" alt="">
 		</figure>
 		<!-- /wp:image -->
 
@@ -159,7 +159,9 @@ $theme_uri = get_template_directory_uri();
 					>
 					<span class="gss-cta__agreement-text">
 						<span>Я согласен на обработку</span>
-						<a class="gss-cta__agreement-link" href="#">персональных данных</a>
+						<a class="gss-cta__agreement-link" href="#"  data-gss-popup-open="privacy"
+            aria-haspopup="dialog"
+            aria-controls="gss-popup-privacy">персональных данных</a>
 					</span>
 				</label>
 			</form>
